@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "se51",
+    "password": "Sakec@1234",
+    "database": "eppodb",
+    "host": "mysql.menrvasolutions.com",
+    "dialect": "mysql",
+    "logging": false,
+    "timezone": "+05:30"
+  },
+  "test": {
+    "username": "se51",
+    "password": "Sakec@1234",
+    "database": "eppodb",
+    "host": "mysql.menrvasolutions.com",
+    "dialect": "mysql",
+    "timezone": "+05:30"
+  },
+  "production": {
+    "username": "se51",
+    "password": "Sakec@1234",
+    "database": "eppodb",
+    "host": "mysql.menrvasolutions.com",
+    "dialect": "mysql",
+    "timezone": "+05:30"
+  }
+}
