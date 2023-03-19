@@ -276,7 +276,7 @@ router.get("/appointmentsData/:id", async (req, res) => {
   res.json({ appointments: appointmentData });
 });
 
-router.put("/appointmentData/:id", async (req, res) => {
+router.put("/appointmentsData/:id", async (req, res) => {
   const bodyData = req.body;
   const AppointmentId = req.params.id;
   const appointmentData = await Appointments.update(bodyData, {
