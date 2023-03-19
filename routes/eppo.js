@@ -4,26 +4,9 @@ const { Op } = require("sequelize");
 const { Appointments } = require("../models");
 const { Professional } = require("../models");
 const { Reviews } = require("../models");
-// const { Status } = require("../models");
 const { User } = require("../models");
 const { PhoneOtp } = require("../models");
 const axios = require('axios');
-// const { ChatSession } = require("../models");
-
-
-
-// OTP
-// router.post("/phoneOtp", async (req, res) => {
-//   const bodyData = req.body;
-//   console.log(bodyData)
-//   var OTPpass = Math.floor(1000 + Math.random() * 9000);
-//   const createResponse = await PhoneOtp.create({
-//     MobileNumber: bodyData.MobileNumber,
-//     OTP: OTPpass,
-//   });
-
-//   res.json(createResponse);
-// });
 
 router.post("/sendOtp", async (req, res) => {
   const bodyData = req.body;
@@ -34,13 +17,7 @@ router.post("/sendOtp", async (req, res) => {
     MobileNumber: MobileNumber,
     OTP: OTPpass,
   });
-  // const verification = await PhoneOtp.findOne({
-  //   where: {
-  //     MobileNumber: MobileNumber,
-  //   },
-  //   order: [["Timestamp", "DESC"]],
-  // });
-  // console.log(OTPpass);
+
   try {
     const otpSendResponse = await axios.get("https://www.fast2sms.com/dev/bulkV2", {
       params: {
