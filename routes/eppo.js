@@ -193,8 +193,9 @@ router.get("/professionalData/:MobileNumber", async (req, res) => {
   });
   res.json({ professionals: professionalData });
 });
-router.get("/professionalData/:id", async (req, res) => {
+router.get("/getProfessional/:id", async (req, res) => {
   const Id = req.params.id;
+  console.log(Id);
   const professionalData = await Professional.findAll({
     where: {
       Id: Id,
