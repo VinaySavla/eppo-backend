@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false
         },
-        Time: {
-            type: DataTypes.TIME,
-            allowNull: false,
-        },
         TransactionId: {
             type: DataTypes.STRING,
             allowNull: false
