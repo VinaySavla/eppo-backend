@@ -298,7 +298,7 @@ router.post("/review", async (req, res) => {
 
 router.get("/review/:id", async (req, res) => {
   const Id = req.params.id;
-  const reviewData = await User.findAll({
+  const reviewData = await Reviews.findAll({
     where: {
       Id: Id,
     },
@@ -313,12 +313,12 @@ router.get("/review/:id", async (req, res) => {
       },
     ],
   });
-  res.json({ reviews: reviewData });
+  res.json({ Reviews: reviewData });
 });
 
-router.get("/reviews/:prid", async (req, res) => {
-  const Id = req.params.prid;
-  const reviewData = await User.findAll({
+router.get("/getProReview/:id", async (req, res) => {
+  const Id = req.params.id;
+  const reviewData = await Reviews.findAll({
     where: {
       ProfessionalId: Id,
     },
@@ -333,7 +333,7 @@ router.get("/reviews/:prid", async (req, res) => {
       },
     ],
   });
-  res.json({ reviews: reviewData });
+  res.json({ Reviews: reviewData });
 });
 
 //End Review
