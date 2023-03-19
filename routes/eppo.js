@@ -177,10 +177,11 @@ router.get("/getProfessional/:id", async (req, res) => {
     where: {
       Id: Id,
     },
-    include: {
-      model: Appointments,
-      as: "appointment",
-    },
+    include: { all: true, nested: true }
+    // include: {
+    //   model: Appointments,
+    //   as: "appointment",
+    // },
   });
   res.json({ professionals: professionalData });
 });
