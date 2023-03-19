@@ -193,6 +193,19 @@ router.get("/professionalData/:MobileNumber", async (req, res) => {
   });
   res.json({ professionals: professionalData });
 });
+router.get("/professionalData/:id", async (req, res) => {
+  const Id = req.params.id;
+  const professionalData = await Professional.findAll({
+    where: {
+      Id: Id,
+    },
+    include: {
+      model: Appointments,
+      as: "appointment",
+    },
+  });
+  res.json({ professionals: professionalData });
+});
 
 router.get("/allProfessionalData", async (req, res) => {
   // const MobileNumber = req.params.MobileNumber;
