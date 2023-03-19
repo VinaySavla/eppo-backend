@@ -316,7 +316,7 @@ router.get("/review/:id", async (req, res) => {
   res.json({ reviews: reviewData });
 });
 
-router.get("/review/:prid", async (req, res) => {
+router.get("/reviews/:prid", async (req, res) => {
   const Id = req.params.prid;
   const reviewData = await User.findAll({
     where: {
