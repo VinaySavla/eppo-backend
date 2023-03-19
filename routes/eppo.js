@@ -254,6 +254,25 @@ router.get("/appointmentsData/:id", async (req, res) => {
   });
   res.json({ appointments: appointmentData });
 });
+router.get("/userAppointment/:uid", async (req, res) => {
+  const UserId = req.params.uid;
+  const appointmentData = await Appointments.findAll({
+    where: {
+      UserId: UserId,
+    },
+    include: [
+      {
+        model: User,
+        as: "user",
+      },
+      {
+        model: Professional,
+        as: "professional",
+      },
+    ],
+  });
+  res.json({ appointments: appointmentData });
+});
 
 router.put("/appointmentsData/:id", async (req, res) => {
   const bodyData = req.body;
