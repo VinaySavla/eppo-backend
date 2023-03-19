@@ -172,7 +172,7 @@ router.get("/professionalData/:MobileNumber", async (req, res) => {
 });
 router.get("/getProfessional/:id", async (req, res) => {
   const Id = req.params.id;
-  console.log(Id);
+  // console.log(Id);
   const professionalData = await Professional.findAll({
     where: {
       Id: Id,
