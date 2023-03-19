@@ -316,6 +316,26 @@ router.get("/review/:id", async (req, res) => {
   res.json({ reviews: reviewData });
 });
 
+router.get("/review/:prid", async (req, res) => {
+  const Id = req.params.prid;
+  const reviewData = await User.findAll({
+    where: {
+      ProfessionalId: Id,
+    },
+    include: [
+      {
+        model: User,
+        as: "user",
+      },
+      {
+        model: Professional,
+        as: "professional",
+      },
+    ],
+  });
+  res.json({ reviews: reviewData });
+});
+
 //End Review
 
 //Login
