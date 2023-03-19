@@ -177,7 +177,8 @@ router.get("/getProfessional/:id", async (req, res) => {
     where: {
       Id: Id,
     },
-    include: { all: true, nested: true }
+    include: { all: true, nested: true },
+    order: [["Timestamp", "DESC"]],
     // include: {
     //   model: Appointments,
     //   as: "appointment",
